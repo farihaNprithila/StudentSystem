@@ -11,8 +11,8 @@ import javax.persistence.Table;
 @Table(name = "department")
 public class Department {
 
-    @Column(name = "department_id")
+    @Column(name = "department_id",  nullable = false)
     private long departmentId;
-    @Column(name = "department_name")
+    @Column(name = "department_name",  nullable = false)
     private String departmentName;
 }

@@ -3,6 +3,7 @@ package StudentSystem.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
@@ -12,6 +13,7 @@ import javax.persistence.Table;
 @Table(name= "course")
 public class Course {
 
+    @Id
     @Column(name = "course_id",nullable = false)
     private long courseId;
     @Column(name = "course_name", nullable = false)
