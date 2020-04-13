@@ -12,11 +12,11 @@ import javax.persistence.Table;
 @Table(name= "course")
 public class Course {
 
-    @Column(name = "")
+    @Column(name = "course_id")
     private long courseId;
-    @Column(name = "")
+    @Column(name = "course_name")
     private String courseName;
-    @Column(name = "")
+    @Column(name = "course_instructor")
     private String courseInstructor;
 
     public Course(long courseId, String courseName, String courseInstructor) {
