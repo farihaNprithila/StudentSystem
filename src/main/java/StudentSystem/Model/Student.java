@@ -11,6 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "student")
 public class Student {
+
     @Id
     @Column(name = "student_id")
     private long id;
