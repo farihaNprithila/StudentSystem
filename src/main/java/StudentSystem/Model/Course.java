@@ -1,15 +1,18 @@
 package StudentSystem.Model;
 
+import org.hibernate.annotations.Table;
+
 import javax.persistence.Column;
 
 /**
  * Created by Fariha Nawaz on 13,Apr,2020.
  */
+@Table()
 public class Course {
-    @Column(name = )
+    @Column(name = "")
     private long courseId;
-    @Column(name = )
+    @Column(name = "")
     private String courseName;
-    @Column(name = )
+    @Column(name = "")
     private String courseInstructor;
 }
