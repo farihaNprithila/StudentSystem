@@ -15,13 +15,13 @@ import java.util.Objects;
 public class Course {
 
     @Id
-    @Column(name = "course_id",nullable = false,updatable = false)
+    @Column(name = "id",nullable = false,updatable = false)
     private long courseId;
 
-    @Column(name = "course_name", nullable = false)
+    @Column(name = "name", nullable = false)
     private String courseName;
 
-    @Column(name = "course_instructor", nullable = false)
+    @Column(name = "instructor", nullable = false)
     private String courseInstructor;
 
     public Course() {
