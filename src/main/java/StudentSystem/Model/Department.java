@@ -15,7 +15,7 @@ public class Department {
 
     @Id
     @Column(name = "id",  nullable = false)
-    private long departmentId;
+    private long id;
 
     @Column(name = "name",  nullable = false)
     private String departmentName;
@@ -23,17 +23,17 @@ public class Department {
     public Department() {
     }
 
-    public Department(long departmentId, String departmentName) {
-        this.departmentId = departmentId;
+    public Department(long id, String departmentName) {
+        this.id = id;
         this.departmentName = departmentName;
     }
 
-    public long getDepartmentId() {
-        return departmentId;
+    public long getId() {
+        return id;
     }
 
-    public void setDepartmentId(long departmentId) {
-        this.departmentId = departmentId;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getDepartmentName() {
@@ -49,11 +49,11 @@ public class Department {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Department that = (Department) o;
-        return departmentId == that.departmentId;
+        return id == that.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(departmentId);
+        return Objects.hash(id);
     }
 }
