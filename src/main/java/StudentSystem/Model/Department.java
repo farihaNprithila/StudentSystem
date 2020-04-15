@@ -18,14 +18,14 @@ public class Department {
     private long id;
 
     @Column(name = "name",  nullable = false)
-    private String departmentName;
+    private String name;
 
     public Department() {
     }
 
-    public Department(long id, String departmentName) {
+    public Department(long id, String name) {
         this.id = id;
-        this.departmentName = departmentName;
+        this.name = name;
     }
 
     public long getId() {
@@ -36,12 +36,12 @@ public class Department {
         this.id = id;
     }
 
-    public String getDepartmentName() {
-        return departmentName;
+    public String getName() {
+        return name;
     }
 
-    public void setDepartmentName(String departmentName) {
-        this.departmentName = departmentName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
