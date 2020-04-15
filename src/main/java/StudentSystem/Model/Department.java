@@ -14,10 +14,10 @@ import java.util.Objects;
 public class Department {
 
     @Id
-    @Column(name = "id",  nullable = false,updatable = false)
+    @Column(name = "id", nullable = false, updatable = false)
     private long id;
 
-    @Column(name = "name",  nullable = false)
+    @Column(name = "name", nullable = false)
     private String name;
 
     public Department() {

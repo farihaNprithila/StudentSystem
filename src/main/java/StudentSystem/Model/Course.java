@@ -5,16 +5,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Objects;
-
+//
 /**
  * Created by Fariha Nawaz on 13,Apr,2020.
  */
 @Entity
-@Table(name= "course")
+@Table(name = "course")
 public class Course {
 
     @Id
-    @Column(name = "id",nullable = false,updatable = false)
+    @Column(name = "id", nullable = false, updatable = false)
     private long id;
 
     @Column(name = "name", nullable = false)
