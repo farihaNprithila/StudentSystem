@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Objects;
 
 /**
  * Created by Fariha Nawaz on 13,Apr,2020.
@@ -13,16 +14,23 @@ import javax.persistence.Table;
 public class Student {
 
     @Id
-    @Column(name = "student_id", nullable = false)
+    @Column(name = "id", nullable = false)
     private long id;
+
     @Column(name = "first_name", nullable = false)
     private String firstName;
+
     @Column(name = "last_name", nullable = false)
     private String lastName;
+
     @Column(name = "email")
     private String email;
+
     @Column(name = "address")
     private String address;
+
+    public Student() {
+    }
 
     public Student(long id, String firstName, String lastName, String email, String address) {
         this.id = id;
@@ -77,5 +85,18 @@ public class Student {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return id == student.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

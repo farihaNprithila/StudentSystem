@@ -1,54 +1,71 @@
 package StudentSystem.Model;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.util.Objects;
 
 /**
  * Created by Fariha Nawaz on 13,Apr,2020.
  */
 @Entity
-@Table(name= "course")
+@Table(name = "course")
 public class Course {
 
     @Id
-    @Column(name = "course_id",nullable = false)
-    private long courseId;
-    @Column(name = "course_name", nullable = false)
-    private String courseName;
-    @Column(name = "course_instructor", nullable = false)
-    private String courseInstructor;
+    @Column(name = "id", nullable = false, updatable = false)
+    private long id;
 
-    public Course(long courseId, String courseName, String courseInstructor) {
-        this.courseId = courseId;
-        this.courseName = courseName;
-        this.courseInstructor = courseInstructor;
+    @Column(name = "name", nullable = false)
+    private String name;
+
+    @Column(name = "instructor", nullable = false)
+    private String instructor;
+
+    public Course() {
     }
 
-    public long getCourseId() {
-        return courseId;
+    public Course(long id, String name, String instructor) {
+        this.id = id;
+        this.name = name;
+        this.instructor = instructor;
     }
 
-    public void setCourseId(long courseId) {
-        this.courseId = courseId;
+    public long getId() {
+        return id;
     }
 
-    public String getCourseName() {
-        return courseName;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public String getName() {
+        return name;
     }
 
-    public String getCourseInstructor() {
-        return courseInstructor;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setCourseInstructor(String courseInstructor) {
-        this.courseInstructor = courseInstructor;
+    public String getInstructor() {
+        return instructor;
     }
 
+    public void setInstructor(String instructor) {
+        this.instructor = instructor;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Course course = (Course) o;
+        return id == course.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }

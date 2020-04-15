@@ -4,7 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-//
+import java.util.Objects;
+
 /**
  * Created by Fariha Nawaz on 13,Apr,2020.
  */
@@ -13,29 +14,46 @@ import javax.persistence.Table;
 public class Department {
 
     @Id
-    @Column(name = "department_id",  nullable = false)
-    private long departmentId;
-    @Column(name = "department_name",  nullable = false)
-    private String departmentName;
+    @Column(name = "id", nullable = false, updatable = false)
+    private long id;
 
-    public Department(long departmentId, String departmentName) {
-        this.departmentId = departmentId;
-        this.departmentName = departmentName;
+    @Column(name = "name", nullable = false)
+    private String name;
+
+    public Department() {
     }
 
-    public long getDepartmentId() {
-        return departmentId;
+    public Department(long id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
-    public void setDepartmentId(long departmentId) {
-        this.departmentId = departmentId;
+    public long getId() {
+        return id;
     }
 
-    public String getDepartmentName() {
-        return departmentName;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public void setDepartmentName(String departmentName) {
-        this.departmentName = departmentName;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Department that = (Department) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
