@@ -1,6 +1,5 @@
 package StudentSystem.Model;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -16,45 +15,45 @@ public class Course {
 
     @Id
     @Column(name = "id",nullable = false,updatable = false)
-    private long courseId;
+    private long id;
 
     @Column(name = "name", nullable = false)
-    private String courseName;
+    private String name;
 
     @Column(name = "instructor", nullable = false)
-    private String courseInstructor;
+    private String instructor;
 
     public Course() {
     }
 
-    public Course(long courseId, String courseName, String courseInstructor) {
-        this.courseId = courseId;
-        this.courseName = courseName;
-        this.courseInstructor = courseInstructor;
+    public Course(long id, String name, String instructor) {
+        this.id = id;
+        this.name = name;
+        this.instructor = instructor;
     }
 
-    public long getCourseId() {
-        return courseId;
+    public long getId() {
+        return id;
     }
 
-    public void setCourseId(long courseId) {
-        this.courseId = courseId;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public String getCourseName() {
-        return courseName;
+    public String getName() {
+        return name;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getCourseInstructor() {
-        return courseInstructor;
+    public String getInstructor() {
+        return instructor;
     }
 
-    public void setCourseInstructor(String courseInstructor) {
-        this.courseInstructor = courseInstructor;
+    public void setInstructor(String instructor) {
+        this.instructor = instructor;
     }
 
     @Override
@@ -62,11 +61,11 @@ public class Course {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Course course = (Course) o;
-        return courseId == course.courseId;
+        return id == course.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(courseId);
+        return Objects.hash(id);
     }
 }
