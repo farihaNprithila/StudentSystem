@@ -3,7 +3,7 @@ package StudentSystem.Controller;
 import StudentSystem.Repository.DepartmentRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * Created by Fariha Nawaz on 16,Apr,2020.
@@ -16,9 +16,9 @@ public class DepartmentController {
         this.departmentRepository = departmentRepository;
     }
 
-    @RequestMapping("/department")
-    public String showDepartment(Model model){
-        model.addAttribute("departments",departmentRepository.findAll());
-        return "department"
+    @GetMapping("/department")
+    public String showDepartment(Model model) {
+        model.addAttribute("departments", departmentRepository.findAll());
+        return "department";
     }
 }

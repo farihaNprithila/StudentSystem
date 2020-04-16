@@ -24,7 +24,6 @@
             </tr>
         </thead>
         <tbody>
-            <jsp:useBean id="courses" scope="request" type="java.util.List"></jsp:useBean>
             <c:forEach var="course" items="${courses}">
             <tr>
                 <td><c:out value="${course.id}"/> </td>
