@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <title>Course</title>
+    <title>Student</title>
 </head>
 <style>
     .table > tbody > tr > td {
@@ -14,7 +14,7 @@
 </style>
 
 <body>
-<h2>Course list:</h2>
+<h2>Student List:</h2>
 <table class="table table-bordered">
     <thead class="thead-dark">
     <tr>
