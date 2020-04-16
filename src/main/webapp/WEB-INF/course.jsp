@@ -1,17 +1,22 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <title>Course</title>
 </head>
+<style>
+    .table > tbody > tr > td {
+        vertical-align: middle;
+    }
+</style>
 
 <body>
     <h2>Course list:</h2>
     <table class="table table-bordered">
-        <thead>
+        <thead class="thead-dark">
             <tr>
                 <th>Course Id</th>
                 <th>Course Name</th>
@@ -19,6 +24,7 @@
             </tr>
         </thead>
         <tbody>
+            <jsp:useBean id="courses" scope="request" type="java.util.List"></jsp:useBean>
             <c:forEach var="course" items="${courses}">
             <tr>
                 <td><c:out value="${course.id}"/> </td>

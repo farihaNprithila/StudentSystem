@@ -19,11 +19,15 @@ public class DevBootStrap implements ApplicationListener<ContextRefreshedEvent> 
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-        Course course=new Course(101,"Programmimng Language I","TBA");
+        Course course = new Course(110, "Programming Language I", "TBA");
         courseRepository.save(course);
-        //courseRepository.delete(course);
-        course=new Course(102,"Programmimng Language II","TBA");
+        course = new Course(111, "Programming Language II", "TBA");
         courseRepository.save(course);
+        course = new Course(220, "Data Structure", "TBA");
+        courseRepository.save(course);
+        course = new Course(221, "Algorithm", "TBA");
+        courseRepository.save(course);
+        //courseRepository.deleteById(101L);
         //courseRepository.deleteById(102L);
 
 
