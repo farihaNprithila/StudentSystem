@@ -1,7 +1,11 @@
 package StudentSystem.Bootstrap;
 
 import StudentSystem.Model.Course;
+import StudentSystem.Model.Department;
+import StudentSystem.Model.Student;
 import StudentSystem.Repository.CourseRepository;
+import StudentSystem.Repository.DepartmentRepository;
+import StudentSystem.Repository.StudentRepository;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
@@ -11,10 +15,15 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class DevBootStrap implements ApplicationListener<ContextRefreshedEvent> {
-    private CourseRepository courseRepository;
 
-    public DevBootStrap(CourseRepository courseRepository) {
+    private CourseRepository courseRepository;
+    private StudentRepository studentRepository;
+    private DepartmentRepository departmentRepository;
+
+    public DevBootStrap(CourseRepository courseRepository, StudentRepository studentRepository, DepartmentRepository departmentRepository) {
         this.courseRepository = courseRepository;
+        this.studentRepository = studentRepository;
+        this.departmentRepository = departmentRepository;
     }
 
     @Override
@@ -27,9 +36,13 @@ public class DevBootStrap implements ApplicationListener<ContextRefreshedEvent> 
         courseRepository.save(course);
         course = new Course(221, "Algorithm", "TBA");
         courseRepository.save(course);
-        //courseRepository.deleteById(101L);
-        //courseRepository.deleteById(102L);
 
+        Student student=new Student(15301121,"Fariha","Nawaz","fariha@gmail.com","Mirpur-2");
+        studentRepository.save(student);
 
+        Department department=new Department(01,"CSE");
+        departmentRepository.save(department);
+        department=new Department(02,"EEE");
+        departmentRepository.save(department);
     }
 }
