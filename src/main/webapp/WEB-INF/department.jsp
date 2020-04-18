@@ -7,29 +7,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <title>Department</title>
 </head>
-<style>
-    .table > tbody > tr > td {
-        vertical-align: middle;
-    }
-</style>
-
 <body>
-<h2>Department list:</h2>
-<table class="table table-bordered">
-    <thead class="thead-dark">
-    <tr>
-        <th>Department Id</th>
-        <th>Department Name</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="department" items="${departments}">
+    <h2>Department list:</h2>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
         <tr>
-            <td><c:out value="${department.id}"/> </td>
-            <td><c:out value="${department.name}"/> </td>
+            <th>Department Id</th>
+            <th>Department Name</th>
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <c:forEach var="department" items="${departments}">
+            <tr>
+                <td><c:out value="${department.id}"/> </td>
+                <td><c:out value="${department.name}"/> </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+    <a href="/adddepartment" class="btn btn-outline-primary" role="button">Create New Department</a>
 </body>
 </html>

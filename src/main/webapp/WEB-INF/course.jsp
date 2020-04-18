@@ -7,11 +7,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <title>Course</title>
 </head>
-<style>
-    .table > tbody > tr > td {
-        vertical-align: middle;
-    }
-</style>
 
 <body>
     <h2>Course list:</h2>

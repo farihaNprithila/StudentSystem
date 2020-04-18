@@ -41,10 +41,5 @@ public class DevBootStrap implements ApplicationListener<ContextRefreshedEvent> 
         studentRepository.save(student);
         student=new Student(11301007,"Shamah","Zoha(Mentor Vaia)","shamah@gmail.com","Kalabagan");
         studentRepository.save(student);
-
-        Department department=new Department(01,"CSE");
-        departmentRepository.save(department);
-        department=new Department(02,"EEE");
-        departmentRepository.save(department);
     }
 }
