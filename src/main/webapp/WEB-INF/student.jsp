@@ -31,6 +31,6 @@
         </c:forEach>
         </tbody>
     </table>
-    <button type="button" class="btn btn-primary">Primary</button>
+    <a href="/addstudent" class="btn btn-outline-primary" role="button">Add New Student</a>
 </body>
 </html>
