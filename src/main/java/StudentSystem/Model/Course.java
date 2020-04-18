@@ -8,7 +8,7 @@ import java.util.Objects;
 
 /**
  * Created by Fariha Nawaz on 13,Apr,2020.
- *///
+ */
 @Entity
 @Table(name = "course")
 public class Course {
