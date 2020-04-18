@@ -28,5 +28,6 @@
             </c:forEach>
         </tbody>
     </table>
+    <a href="/addcourse" class="btn btn-outline-primary" role="button">Add New Course</a>
 </body>
 </html>

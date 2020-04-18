@@ -16,7 +16,7 @@
     <title>New Student</title>
 </head>
 <body>
-<h3>Add a new student:</h3>
+    <h3>Add a new student:</h3>
     <%--@elvariable id="studentAdd" type="StudentSystem"--%>
     <form:form method="POST" action="/addstudent" modelAttribute="studentAdd">
         <div class="form-group">

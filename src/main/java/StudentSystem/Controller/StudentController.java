@@ -30,13 +30,13 @@ public class StudentController {
     }
 
     @GetMapping("/addstudent")
-    public String newDepartment(Model model) {
+    public String newStudent(Model model) {
         model.addAttribute("studentAdd", new Student());
         return "studentForm";
     }
 
     @PostMapping("/addstudent")
-    public String addDepartment(@Valid @ModelAttribute("studentAdd") Student student, BindingResult result) {
+    public String addStudent(@Valid @ModelAttribute("studentAdd") Student student, BindingResult result) {
         if (result.hasErrors()) {
             return "error";
         }
