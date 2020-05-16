@@ -1,10 +1,8 @@
 package StudentSystem.Model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * Created by Fariha Nawaz on 13,Apr,2020.
@@ -28,6 +26,7 @@ public class Student {
 
     @Column(name = "address")
     private String address;
+
 
     public Student() {
     }
@@ -86,6 +85,9 @@ public class Student {
     public void setAddress(String address) {
         this.address = address;
     }
+
+
+
 
     @Override
     public boolean equals(Object o) {

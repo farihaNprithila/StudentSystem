@@ -1,10 +1,9 @@
 package StudentSystem.Model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * Created by Fariha Nawaz on 13,Apr,2020.
@@ -19,6 +18,7 @@ public class Department {
 
     @Column(name = "name", nullable = false)
     private String name;
+
 
     public Department() {
     }
@@ -43,6 +43,7 @@ public class Department {
     public void setName(String name) {
         this.name = name;
     }
+
 
     @Override
     public boolean equals(Object o) {

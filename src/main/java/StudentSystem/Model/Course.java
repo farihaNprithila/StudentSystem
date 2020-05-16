@@ -1,9 +1,6 @@
 package StudentSystem.Model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 /**
@@ -22,6 +19,8 @@ public class Course {
 
     @Column(name = "instructor", nullable = false)
     private String instructor;
+
+
 
     public Course() {
     }
@@ -55,6 +54,7 @@ public class Course {
     public void setInstructor(String instructor) {
         this.instructor = instructor;
     }
+
 
     @Override
     public boolean equals(Object o) {
