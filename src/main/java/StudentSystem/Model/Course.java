@@ -1,6 +1,7 @@
 package StudentSystem.Model;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -20,7 +21,8 @@ public class Course {
     @Column(name = "instructor", nullable = false)
     private String instructor;
 
-
+    @ManyToMany(mappedBy = "courses")
+    private List<Student> students;
 
     public Course() {
     }
@@ -55,6 +57,13 @@ public class Course {
         this.instructor = instructor;
     }
 
+    public List<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<Student> students) {
+        this.students = students;
+    }
 
     @Override
     public boolean equals(Object o) {

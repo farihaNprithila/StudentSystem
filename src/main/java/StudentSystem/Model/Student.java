@@ -1,6 +1,7 @@
 package StudentSystem.Model;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -27,6 +28,11 @@ public class Student {
     @Column(name = "address")
     private String address;
 
+    @ManyToMany
+    @JoinTable(name = "student_course",
+            joinColumns = @JoinColumn(name = "student_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id"))
+    private List<Course> courses;
 
     public Student() {
     }
@@ -86,8 +92,13 @@ public class Student {
         this.address = address;
     }
 
+    public List<Course> getCourses() {
+        return courses;
+    }
 
-
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
 
     @Override
     public boolean equals(Object o) {
