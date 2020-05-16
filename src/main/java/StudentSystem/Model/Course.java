@@ -24,6 +24,10 @@ public class Course {
     @ManyToMany(mappedBy = "courses")
     private List<Student> students;
 
+    @ManyToOne
+    @JoinColumn(name = "dep_id", nullable = false)
+    private Department department;
+
     public Course() {
     }
 
@@ -63,6 +67,14 @@ public class Course {
 
     public void setStudents(List<Student> students) {
         this.students = students;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 
     @Override

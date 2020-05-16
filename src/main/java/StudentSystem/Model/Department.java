@@ -22,6 +22,9 @@ public class Department {
     @OneToMany(mappedBy = "department")
     private Set<Student> students;
 
+    @OneToMany(mappedBy = "department")
+    private Set<Course> courses;
+
     public Department() {
     }
 
@@ -52,6 +55,14 @@ public class Department {
 
     public void setStudents(Set<Student> students) {
         this.students = students;
+    }
+
+    public Set<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(Set<Course> courses) {
+        this.courses = courses;
     }
 
     @Override
