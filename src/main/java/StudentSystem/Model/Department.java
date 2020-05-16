@@ -19,6 +19,8 @@ public class Department {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @OneToMany(mappedBy = "department")
+    private Set<Student> students;
 
     public Department() {
     }
@@ -44,6 +46,13 @@ public class Department {
         this.name = name;
     }
 
+    public Set<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Set<Student> students) {
+        this.students = students;
+    }
 
     @Override
     public boolean equals(Object o) {

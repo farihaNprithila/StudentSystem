@@ -34,6 +34,10 @@ public class Student {
             inverseJoinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id"))
     private List<Course> courses;
 
+    @ManyToOne
+    @JoinColumn(name = "dep_id", nullable = false)
+    private Department department;
+
     public Student() {
     }
 
@@ -98,6 +102,14 @@ public class Student {
 
     public void setCourses(List<Course> courses) {
         this.courses = courses;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 
     @Override
