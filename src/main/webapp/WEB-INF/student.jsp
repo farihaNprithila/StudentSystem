@@ -17,6 +17,9 @@
             <th>Last Name</th>
             <th>Email</th>
             <th>Address</th>
+            <th>Department</th>
+            <th>Courses</th>
+
         </tr>
         </thead>
         <tbody>
@@ -27,6 +30,8 @@
                 <td><c:out value="${student.lastName}"/> </td>
                 <td><c:out value="${student.email}"/> </td>
                 <td><c:out value="${student.address}"/> </td>
+                <td><c:out value="${student.department}"/> </td>
+                <td><c:out value="${student.courses}"/> </td>
             </tr>
         </c:forEach>
         </tbody>

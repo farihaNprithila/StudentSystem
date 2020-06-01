@@ -41,19 +41,23 @@ public class Student {
     public Student() {
     }
 
-    public Student(long id, String firstName, String lastName, String email, String address) {
+    public Student(long id, String firstName, String lastName, String email, String address, List<Course> courses, Department department) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.address = address;
+        this.courses = courses;
+        this.department = department;
     }
 
-    public Student(String firstName, String lastName, String email, String address) {
+    public Student(String firstName, String lastName, String email, String address, List<Course> courses, Department department) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.address = address;
+        this.courses = courses;
+        this.department = department;
     }
 
     public long getId() {
