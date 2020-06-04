@@ -36,15 +36,15 @@
             <form:input path="address"/><br/>
 
             <form:label name="course" path="courses">Course</form:label>
-                <form:select path="course">
-                <form:option label="Select your course" value= "Select" />
-                <form:options items="${courseList}" itemLabel="name"/>
-        </form:select><br/>
+                <form:select path="courses">
+                    <form:option value="Select" label="Select your course"/>
+                    <form:options items="${courseList}" itemLabel="name"/>
+                </form:select><br/>
 
             <form:label path="department">Department</form:label>
                 <form:select path="department">
                     <form:option label="Select your department" value= "Select" />
-                    <form:options items="${dropdown}" itemLabel="name"/>
+                    <form:options items="${departmentList}" itemLabel="name"/>
                 </form:select><br/>
 
         </div>

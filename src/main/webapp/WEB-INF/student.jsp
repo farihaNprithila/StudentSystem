@@ -31,7 +31,11 @@
                 <td><c:out value="${student.email}"/> </td>
                 <td><c:out value="${student.address}"/> </td>
                 <td><c:out value="${student.department.name}"/> </td>
-                <td><c:out value="${student.courses}"/> </td>
+                <td>
+                    <c:forEach var="course" items="${student.courses}">
+                        <c:out value="${course.name}"/>
+                    </c:forEach>
+                </td>
             </tr>
         </c:forEach>
         </tbody>

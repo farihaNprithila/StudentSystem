@@ -1,7 +1,9 @@
 package StudentSystem.Controller;
 
+import StudentSystem.Model.Course;
 import StudentSystem.Model.Department;
 import StudentSystem.Model.Student;
+import StudentSystem.Repository.CourseRepository;
 import StudentSystem.Repository.DepartmentRepository;
 import StudentSystem.Repository.StudentRepository;
 import org.springframework.stereotype.Controller;
@@ -22,10 +24,12 @@ public class StudentController {
 
     private StudentRepository studentRepository;
     private DepartmentRepository departmentRepository;
+    private CourseRepository courseRepository;
 
-    public StudentController(StudentRepository studentRepository, DepartmentRepository departmentRepository) {
+    public StudentController(StudentRepository studentRepository, DepartmentRepository departmentRepository, CourseRepository courseRepository) {
         this.studentRepository = studentRepository;
         this.departmentRepository = departmentRepository;
+        this.courseRepository = courseRepository;
     }
 
     @GetMapping("/student")
@@ -58,7 +62,7 @@ public class StudentController {
     }
 
     @ModelAttribute("courseList")
-    public List<CourseController> courseList() {
-        return departmentRepository.findAll();
+    public List<Course> courseList() {
+        return courseRepository.findAll();
     }
 }
