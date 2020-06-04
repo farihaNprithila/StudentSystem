@@ -36,7 +36,10 @@
             <form:input path="address"/><br/>
 
             <form:label name="course" path="courses">Course</form:label>
-            <form:input path="courses"/><br/>
+                <form:select path="course">
+                <form:option label="Select your course" value= "Select" />
+                <form:options items="${courseList}" itemLabel="name"/>
+        </form:select><br/>
 
             <form:label path="department">Department</form:label>
                 <form:select path="department">

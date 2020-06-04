@@ -52,8 +52,13 @@ public class StudentController {
         return "redirect:/student";
     }
 
-    @ModelAttribute("dropdown")
+    @ModelAttribute("departmentList")
     public List<Department> departmentList() {
+        return departmentRepository.findAll();
+    }
+
+    @ModelAttribute("courseList")
+    public List<CourseController> courseList() {
         return departmentRepository.findAll();
     }
 }
