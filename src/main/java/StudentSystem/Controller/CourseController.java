@@ -45,14 +45,14 @@ public class CourseController {
         if (result.hasErrors()) {
             return "error";
         }
-        if((courseRepository.existsById(course.getId()))){
-            return"error";
+        if ((courseRepository.existsById(course.getId()))) {
+            return "error";
         }
         courseRepository.save(course);
         return "redirect:/course";
     }
 
-    @ModelAttribute("dropdown")
+    @ModelAttribute("departmentList")
     public List<Department> departmentList() {
         return departmentRepository.findAll();
     }

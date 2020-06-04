@@ -32,7 +32,7 @@
             <form:label path="department">Department</form:label>
             <form:select path="department">
                 <form:option label="Select your department" value= "Select" />
-                <form:options items="${dropdown}" itemLabel="name"/>
+                <form:options items="${departmentList}" itemLabel="name"/>
             </form:select><br/>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
