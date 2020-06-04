@@ -1,7 +1,9 @@
 package StudentSystem.Controller;
 
 import StudentSystem.Model.Course;
+import StudentSystem.Model.Department;
 import StudentSystem.Repository.CourseRepository;
+import StudentSystem.Repository.DepartmentRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
+import java.util.List;
 
 /**
  * Created by Fariha Nawaz on 16,Apr,2020.
@@ -18,9 +21,11 @@ import javax.validation.Valid;
 public class CourseController {
 
     private CourseRepository courseRepository;
+    private DepartmentRepository departmentRepository;
 
-    public CourseController(CourseRepository courseRepository) {
+    public CourseController(CourseRepository courseRepository, DepartmentRepository departmentRepository) {
         this.courseRepository = courseRepository;
+        this.departmentRepository = departmentRepository;
     }
 
     @GetMapping("/course")
@@ -40,7 +45,15 @@ public class CourseController {
         if (result.hasErrors()) {
             return "error";
         }
+        if((courseRepository.existsById(course.getId()))){
+            return"error";
+        }
         courseRepository.save(course);
         return "redirect:/course";
+    }
+
+    @ModelAttribute("dropdown")
+    public List<Department> departmentList() {
+        return departmentRepository.findAll();
     }
 }

@@ -28,6 +28,12 @@
 
             <form:label name="instructor" path="instructor">Instructor</form:label>
             <form:input path="instructor"/><br/>
+
+            <form:label path="department">Department</form:label>
+            <form:select path="department">
+                <form:option label="Select your department" value= "Select" />
+                <form:options items="${dropdown}" itemLabel="name"/>
+            </form:select><br/>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         <button type="reset" class="btn btn-primary">Reset</button>

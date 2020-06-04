@@ -16,6 +16,7 @@
                 <th>Course Id</th>
                 <th>Course Name</th>
                 <th>Course Instructor</th>
+                <th>Department</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,7 @@
                 <td><c:out value="${course.id}"/> </td>
                 <td><c:out value="${course.name}"/> </td>
                 <td><c:out value="${course.instructor}"/> </td>
+                <td><c:out value="${course.department.name}"/></td>
             </tr>
             </c:forEach>
         </tbody>
