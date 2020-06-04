@@ -19,43 +19,36 @@
     <h3>Add a new student:</h3>
     <%--@elvariable id="studentAdd" type="StudentSystem"--%>
     <form:form method="POST" action="/addstudent" modelAttribute="studentAdd">
-        <div class="form-group">
-            <label for="id">Student Id</label>
-            <form:label name="id" path="id"></form:label>
+
+            <form:label name="id" path="id" >Student Id</form:label>
             <form:input path="id"/><br/>
-            <div class="valid-feedback">Valid.</div>
-            <div class="invalid-feedback">Please fill out this field.</div>
-        </div>
-        <div>
+
             <form:label name="firstName" path="firstName">First Name</form:label>
             <form:input path="firstName"/><br/>
-        </div>
-        <div>
+
             <form:label name="lastName" path="lastName">Last Name</form:label>
             <form:input path="lastName"/><br/>
-        </div>
-        <div>
+
             <form:label name="email" path="email">Email</form:label>
             <form:input path="email"/><br/>
-        </div>
-        <div>
+
             <form:label name="address" path="address">Address</form:label>
             <form:input path="address"/><br/>
-        </div>
-        <div>
+
             <form:label name="course" path="courses">Course</form:label>
             <form:input path="courses"/><br/>
-        </div>
-        <div>
+
             <form:label path="department">Department</form:label>
-            <form:select path="department">
-                <form:option label="Select your department" value= "Select" />
-                <form:options items="${dropdown}" itemLabel="name"/>
-            </form:select><br/>
+                <form:select path="department">
+                    <form:option label="Select your department" value= "Select" />
+                    <form:options items="${dropdown}" itemLabel="name"/>
+                </form:select><br/>
 
         </div>
+
         <button type="submit" class="btn btn-primary">Submit</button>
         <button type="reset" class="btn btn-primary">Reset</button>
+
     </form:form>
 </body>
 </html>
