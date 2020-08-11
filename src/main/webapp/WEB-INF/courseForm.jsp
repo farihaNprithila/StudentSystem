@@ -28,6 +28,9 @@
 
             <form:label name="instructor" path="instructor">Instructor</form:label>
             <form:input path="instructor"/><br/>
+
+            <form:label name="department" path="department">Department</form:label>
+            <form:input path="department"/><br/>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         <button type="reset" class="btn btn-primary">Reset</button>
